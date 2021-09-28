@@ -34,28 +34,28 @@
         var giatri = 1;
         var dem = 1;
         arr.sort();
-        var kq = arr[0];
+        var so = arr[0];
         for (var i = 0; i < arr.length-1; i++) {
             if (arr[i] == arr[i+1]) {
                 dem++;
             } else {
                 if (dem > giatri) {
                     giatri = dem;
-                    kq = arr[i];
+                    so = arr[i];
                 }
                 dem = 1;
             }
             if (i == arr.length - 2) {
                 if (dem > giatri) {
                     giatri = dem;
-                    kq = arr[i];
+                    so = arr[i];
                 }
             }
         }
         if (giatri == 1 && arr.length > 1 && arr[0] == arr[1]) {
             giatri = arr.length;
         }
-        document.write(kq + ' xuất hiện ' + giatri + ' lần<br>');
+        document.write('Số ' + so + ' xuất hiện ' + giatri + ' lần<br>');
         //Có bao nhiêu số nguyên tố xuất hiện trong mảng
         var check = true;
 		var count = 0;
