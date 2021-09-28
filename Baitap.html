@@ -58,20 +58,21 @@
         document.write('Số ' + so + ' xuất hiện ' + giatri + ' lần<br>');
         //Có bao nhiêu số nguyên tố xuất hiện trong mảng
         var check = true;
-		var count = 0;
-		for(var i = 0 ; i < arr.length ; i++) {
-			check = true;
-			for(var j = 2; j < arr[i] ; j++) {
-				if(arr[i] % j == 0 ) {
-					check = false;
-				}
-			}
-			if((check == true) && (arr[i] > 1)) {
-				document.write(arr[i] + ' ');
-				count++;
+	var count = 0;
+	document.write('Các sô nguyên tố trong mảng là: ');
+	for(var i = 0 ; i < arr.length ; i++) {
+		check = true;
+		for(var j = 2; j < arr[i] ; j++) {
+			if(arr[i] % j == 0 ) {
+				check = false;
 			}
 		}
-        document.write('Có ' + count + ' số nguyên tố xuất hiện trong mảng');
+		if((check == true) && (arr[i] > 1)) {
+			document.write(arr[i] + ' ');
+			count++;
+		}
+	}
+        document.write('<br>Có ' + count + ' số nguyên tố xuất hiện trong mảng');
     </script>
 </body>
 </html>
