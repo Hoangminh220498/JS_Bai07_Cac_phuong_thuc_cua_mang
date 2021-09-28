@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = new Array();
+        var tt = 1;
+        var i = 0;
+        while (tt == 1) {
+            arr[i] = parseFloat(prompt("Nhập vào số thứ " +(i+1)+ " của mảng: "));
+            tt = prompt("Nhập vào 1 để tiếp tục, 0 để dừng việc nhập ");
+            i++;
+        }
+        document.write("Mảng vừa nhập là:<br>");
+        document.write(arr.join() + "<br>");
+        //Mảng có bao nhiêu số chẵn, bao nhiêu số lẽ.
+        var countC = 0;
+		var countL = 0;		
+		for(var i = 0 ; i < arr.length ; i++) {
+			if(arr[i] % 2 == 0) {
+				countC++;
+			}	else {
+				countL++;
+				}
+		}
+        document.write('Mảng có ' + countC + ' số chẵn'+ '<br>');
+        document.write('Mảng có ' + countL + ' số lẽ' + '<br>');
+        //Tìm xem số nào xuất hiện nhiều nhất trong mảng, xuất hiện bao nhiêu lần.
+        var giatri = 1;
+        var dem = 1;
+        arr.sort();
+        var kq = arr[0];
+        for (var i = 0; i < arr.length-1; i++) {
+            if (arr[i] == arr[i+1]) {
+                dem++;
+            } else {
+                if (dem > giatri) {
+                    giatri = dem;
+                    kq = arr[i];
+                }
+                dem = 1;
+            }
+            if (i == arr.length - 2) {
+                if (dem > giatri) {
+                    giatri = dem;
+                    kq = arr[i];
+                }
+            }
+        }
+        if (giatri == 1 && arr.length > 1 && arr[0] == arr[1]) {
+            giatri = arr.length;
+        }
+        document.write('Số xuất hiện nhiêu nhất là: ' + kq + ' Với số lần xuất hiện là: ' + giatri +'<br>');
+        //Có bao nhiêu số nguyên tố xuất hiện trong mảng
+        var check = true;
+		var count = 0;
+		for(var i = 0 ; i < arr.length ; i++) {
+			check = true;
+			for(var j = 2; j < arr[i] ; j++) {
+				if(arr[i] % j == 0 ) {
+					check = false;
+				}
+			}
+			if((check == true) && (arr[i] > 1)) {
+				document.write(arr[i] = ' ');
+				count++;
+			}
+		}
+        document.write('Có ' + count + ' số nguyên tố xuất hiện trong mảng');
+    </script>
+</body>
+</html>
